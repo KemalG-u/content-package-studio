@@ -6,6 +6,8 @@ A local, single-user web app that turns hand-collected sources (an X post, a web
 
 **Language note:** the interface, the error messages and the editorial standard are in Turkish, because the content it prepares is for a Turkish-speaking audience. See [README.tr.md](README.tr.md).
 
+How this differs from [karincaai-icerik-studyosu](https://github.com/KemalG-u/karincaai-icerik-studyosu): that repository is an offline Python core (SQLite sources and drafts, revision control, editorial checks, prompt builders) that never calls a model; this one is the local web app with a review UI, hash-verified ZIP packages and optional media generation.
+
 ## Why it exists
 
 Drafts written with AI help tend to lose their evidence trail: which source said what, which text was approved by a person, which image belongs to which revision. This app keeps that trail in one SQLite file:

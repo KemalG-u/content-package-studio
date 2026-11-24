@@ -167,4 +167,4 @@ def _audio(draft, out_dir):
         raise ValueError('Ses servisine ulaşılamadı veya geçerli altyazı dönmedi; ses işi tamamlanmadı.') from exc
     return {'kind': 'audio', 'files': [{'name': 'voice.mp3', 'kind': 'audio', 'mime': 'audio/mpeg'}, {'name': 'voice.tr.srt', 'kind': 'subtitle', 'mime': 'application/x-subrip', 'for_asset': 'voice.mp3'}, {'name': 'voice.tr.vtt', 'kind': 'subtitle', 'mime': 'text/vtt', 'for_asset': 'voice.mp3'}], 'alt_text': script,
             'rights': None, 'provenance': 'synthetic_cloud_tts',
-            'warnings': ['Microsoft Edge çevrimiçi sesi kullanıldı; ticari kullanım veya lisans hakkı otomatik garanti edilmez.', 'Bu sentetik seslendirmedir; Kemal sesinin taklidi değildir.']}
+            'warnings': ['Microsoft Edge çevrimiçi sesi kullanıldı; ticari kullanım veya lisans hakkı otomatik garanti edilmez.', 'Bu sentetik seslendirmedir; gerçek bir kişinin sesinin taklidi değildir.']}

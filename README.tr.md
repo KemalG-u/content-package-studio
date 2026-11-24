@@ -6,6 +6,8 @@ Elle topladığınız kaynakları (X gönderisi, web sayfası, YouTube transkrip
 
 Arayüz, hata mesajları ve editoryal standart Türkçedir; İngilizce ana belge [README.md](README.md) dosyasıdır.
 
+[karincaai-icerik-studyosu](https://github.com/KemalG-u/karincaai-icerik-studyosu) deposundan farkı: o depo, model çağırmayan çevrimdışı bir Python çekirdeğidir (SQLite kaynak ve taslaklar, revizyon denetimi, editoryal kontroller, istem oluşturucular); bu depo ise gözden geçirme arayüzü, özet doğrulamalı ZIP paketleri ve isteğe bağlı medya üretimi olan yerel web uygulamasıdır.
+
 ## Neden var
 
 Yapay zekâ ile yazılan taslaklar kanıt izini kolayca kaybeder: hangi kaynak ne dedi, hangi metni insan onayladı, hangi görsel hangi sürüme ait. Uygulama bu izi tek bir SQLite dosyasında tutar:

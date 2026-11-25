@@ -3,6 +3,6 @@ fastapi>=0.165,<1
 uvicorn>=0.54,<1
 psutil>=7,<8
 pillow>=13,<14
-httpx>=0.28,<1        # used by fastapi.testclient in the tests
+httpx>=0.28.1,<1        # used by fastapi.testclient in the tests
 # Optional: synthetic narration for generated videos (needs network and ffmpeg)
 # edge-tts

@@ -59,7 +59,7 @@ Environment variables:
 
 - **Model generation only works with the author's setup.** Draft generation and model review call a Hermes agent in an isolated, tool-free subprocess with a fixed provider and model (`openai-codex` / `gpt-5.6-terra`, see `studio/model_worker.py`) and need a matching subscription. Without it, sources, editing, revisions, approvals, media and export still work, and generation reports an error instead of faking a draft. The test that exercises the real model is skipped unless `STUDIO_LIVE_MODEL=1`.
 - **Tested on Windows only.** CI runs on Windows. Linux and macOS have not been tried; the subtitle worker (`asr_remote_worker.py`) is meant for a Linux host.
-- Tests that need ffmpeg/ffprobe are skipped when those are missing; skipped is not passed.
+- Tests that need ffmpeg/ffprobe are skipped when those are missing; skipped is not passed. CI installs ffmpeg and fails on any skip other than the three opt-in live tests (`STUDIO_LIVE_MODEL`, `STUDIO_LIVE_AUDIO`, `STUDIO_LIVE_ASR`).
 - The editorial standard (`studio/content_standard.v1.json`) and the prompts are written in Turkish for one specific account and audience. Treat them as an example to replace, not a neutral default.
 - The optional subtitle job uploads a media file you own to your SSH host; the generated narration uses an online text-to-speech service whose licence terms you must check yourself.
 - No claim is made about reach, engagement or content quality. The app prepares and checks packages; it does not judge whether a post is good.

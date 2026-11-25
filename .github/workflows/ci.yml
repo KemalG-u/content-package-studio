@@ -26,7 +26,19 @@ jobs:
       - name: Install the X text counter (twitter-text, pinned in package-lock.json)
         run: npm ci
         working-directory: studio
+      - name: Install ffmpeg (the media, upload and video tests are skipped without it)
+        shell: bash
+        run: |
+          choco install ffmpeg --yes --no-progress
+          ffmpeg -version | head -1
+          ffprobe -version | head -1
       - name: Python tests
-        run: python -X utf8 -m unittest discover -s studio -t . -p "test_*.py"
+        # The only tests allowed to be skipped are the three opt-in live ones
+        # (STUDIO_LIVE_MODEL, STUDIO_LIVE_AUDIO, STUDIO_LIVE_ASR). Any other skip,
+        # for example a missing ffmpeg, fails the job instead of passing silently.
+        shell: bash
+        run: |
+          python -X utf8 -m unittest discover -s studio -t . -p "test_*.py" 2>&1 | tee unittest.log
+          grep -qx 'OK (skipped=3)' unittest.log
       - name: Front-end flow test
         run: node --test studio/test_frontend_flows.js
